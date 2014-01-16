@@ -27,5 +27,6 @@ class RiakTopic < Risky
   value :videos, default: {}
 
   index2i :permalink, type: :bin
+  index2i :uuid, type: :bin, multi: true
 
 end

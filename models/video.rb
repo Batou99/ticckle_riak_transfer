@@ -18,13 +18,15 @@ class Video < ActiveRecord::Base
 
   def serializable_hash(opts)
     {
+      uuid: SecureRandom.hex,
       title: title,
       tags: tags,
       points: points,
       length: length,
       guid: guid,
       s3_key: s3_key,
-      state: state
+      state: state,
+      user: user.as_json
     }
   end
 
