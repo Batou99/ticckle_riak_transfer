@@ -1,6 +1,3 @@
-require 'risky'
-Risky.riak = Riak::Client.new(:host => '10.0.2.15', :protocol => 'pbc')
-
 class RiakVideo < Risky
   include Risky::Indexes
   include Risky::Timestamps

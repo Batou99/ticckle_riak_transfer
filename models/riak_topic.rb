@@ -1,6 +1,3 @@
-require 'risky'
-Risky.riak = Riak::Client.new(:host => '10.0.2.15', :protocol => 'pbc')
-
 class RiakTopic < Risky
   include Risky::Indexes
   include Risky::Timestamps
@@ -28,6 +25,7 @@ class RiakTopic < Risky
 
   index2i :permalink, type: :bin
   index2i :uuid, type: :bin, multi: true
-  index2i :watcher_ids, type: :bin
+  index2i :watcher_ids, type: :bin, multi: true
+  index2i :contributors, type: :bin, multi: true
 
 end
