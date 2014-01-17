@@ -28,5 +28,6 @@ class RiakTopic < Risky
 
   index2i :permalink, type: :bin
   index2i :uuid, type: :bin, multi: true
+  index2i :watcher_ids, type: :bin
 
 end

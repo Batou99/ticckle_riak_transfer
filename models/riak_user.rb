@@ -17,7 +17,12 @@ class RiakUser < Risky
 
 
   index2i :username, type: :bin
+  index2i :video_uuids, type: :bin, multi: true
 
   links :videos
+
+  def list_videos
+    @riak_object.walk('videos','videos',true).flatten.map(&:data).map { |v| v.delete 'user'; v}
+  end
 
 end

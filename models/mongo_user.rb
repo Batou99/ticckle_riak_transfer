@@ -5,6 +5,7 @@ class MongoUser
   field :email
   field :video_ids, type: Array
 
+
   def videos
     # This returns an enumerator that breaks on last element (count does not work)
     #MongoTopic.all.map(&:videos).flatten.find(video_ids)

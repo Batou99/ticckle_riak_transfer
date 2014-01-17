@@ -17,8 +17,9 @@ class Video < ActiveRecord::Base
   #end
 
   def serializable_hash(opts)
+    update_attribute 'uuid', SecureRandom.hex if uuid.blank?
     {
-      uuid: SecureRandom.hex,
+      uuid: uuid,
       title: title,
       tags: tags,
       points: points,
